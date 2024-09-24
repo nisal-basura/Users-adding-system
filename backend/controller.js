@@ -10,7 +10,14 @@ const users =[
 ];
 
 const getUsers = (cb) => {
-    cd(users);
+    cb(users);
+};
+
+
+const getUsersById =(id, cb)=> {
+    const user = users.find(user => user.id == id)
+    cb(user);
 }
 
-const getUsersById =(id, cb)
+exports.getUsers = getUsers;
+exports.getUsersById = getUsersById;
